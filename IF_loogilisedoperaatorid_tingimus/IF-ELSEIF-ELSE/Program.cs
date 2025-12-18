@@ -1,24 +1,77 @@
-﻿namespace IF_ELSEIF_ELSE
+﻿using System.Reflection.Metadata;
+
+namespace IF_ELSEIF_ELSE
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             //küsi kasutajalt tema pikkust
+            float pikkus = 0.0f;
+            Console.WriteLine("Mis on sinu pikkus meetrites?");
+            pikkus = float.Parse(Console.ReadLine());
             //kui ta on lühem kui 0cm, ütle võimatu pikkus
+            if (pikkus < 0.0f)
+            {
+                Console.WriteLine("võimatu pikkus");
+            }
             //kui ta on lühem kui 1m, ütle juntsu
+            else if (pikkus < 1.0f)
+            {
+                Console.WriteLine("juntsu");
+            }
             //kui ta on lühem kui 2m, ütle tavaline kolge
+            else if (pikkus < 2.0f)
+            {
+                Console.WriteLine("tavaline kolge");
+            }
             //kui ta on pikem kui 2m, ütle hiiglane
+            else if (pikkus > 2.0f)
+            {
+                Console.WriteLine("hiiglane");
+            }
 
             //küsi kasutaja vanust
+            int vanus = 0;
+            Console.WriteLine("Mis on sinu vanus?");
+            vanus = int.Parse(Console.ReadLine());
             //küsi kasutajalt praegust aastaarvu
+            int aasta = 0;
+            Console.WriteLine("Mis aasta on praegu");
+            aasta = int.Parse(Console.ReadLine());
             //lahuta aastast kasutaja vanus
+            int arvutus = aasta - vanus;
             //kui on sündinud 2025-2020, ütle talle kes sulle arvuti juba andis
+            if  (arvutus > 2020 &&  arvutus < 2025)
+            {
+                Console.WriteLine("kes sulle arvuti juba andis");
+            }
             //kui on sündinud 2020-2015, ütle talle skibidi sigmaless
+            else if (arvutus > 2015 &&  arvutus < 2020)
+            {
+                Console.WriteLine("skibidi sigmaless");
+            }
             //kui on sündinud 2015-2010, küsi talt kas ta tahab saada programmeerijaks
+            else if (arvutus > 2010 && aasta < 2015)
+            {
+                Console.WriteLine("kas ta tahab saada programmeerijaks");
+                string valik = Console.ReadLine();
+                if (valik == "jah")
+                {
+                    Console.WriteLine("tubli");
+                }
+                else if (valik == "ei")
+                {
+                    Console.WriteLine("kahju");
+                }
+            }
             //  kui jah, ütle tubli
             //  kui ei, ütle kahju
             //kui sündinud enne 2010 küsi mitu range comicsit ta oma redditi lugemise ajal leidis
+            else if (arvutus < 2010)
+            {
+                Console.WriteLine("mitu range comicsit sa oma redditi lugemise ajal leidsid");
+            }
 
             //küsi kasutajalt elukoha suunakoodi
             //kui suunakood on väiksem kui 5 tähte, ütle talle 1 täht on puudu
