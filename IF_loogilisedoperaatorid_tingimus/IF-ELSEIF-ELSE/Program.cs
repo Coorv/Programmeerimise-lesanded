@@ -74,9 +74,24 @@ namespace IF_ELSEIF_ELSE
             }
 
             //küsi kasutajalt elukoha suunakoodi
+            string suunakood = "";
+            Console.WriteLine("Mis on sinu elukoha suunakood?");
+            suunakood = Console.ReadLine();
             //kui suunakood on väiksem kui 5 tähte, ütle talle 1 täht on puudu
+            if (suunakood.Length < 5)
+            {
+                Console.WriteLine("1 täht on puudu");
+            }
             //kui suunakood on suurem kui 5 tähte, ütle talle 1 täht on üle
+            if (suunakood.Length > 5)
+            {
+                Console.WriteLine("1 täht on üle");
+            }
             //kui suunakood on 5 tähte, ütle "ahha nüüd tean kus elad"
+            if (suunakood.Length == 5)
+            {
+                Console.WriteLine("ahha nüüd tean kus elad");
+            }
 
             //küsi kasutajalt kas ta töötab
             //kui kasutaja vastab jah, siis ütle tubli
