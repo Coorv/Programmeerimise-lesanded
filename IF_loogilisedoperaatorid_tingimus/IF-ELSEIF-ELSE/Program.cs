@@ -94,17 +94,57 @@ namespace IF_ELSEIF_ELSE
             }
 
             //küsi kasutajalt kas ta töötab
+            string töö = "";
+            Console.WriteLine("Kas saa töötad?");
+            töö = Console.ReadLine();
             //kui kasutaja vastab jah, siis ütle tubli
+            if (töö == "jah")
+            {
+                Console.WriteLine("Tubli!");
+            }
             //kui kasutaja vastab ei, siis ütle kahju, miks sa siis töökohta ei otsi?
+            else if (töö == "ei")
+            {
+                Console.WriteLine("Kahju, miks sa siis töökohta ei otsi?");
+            }
             //kui kasutaja vastab otsin siis ütle loodan et sa saad varsti tööle C:
+            else if  (töö == "otsin")
+            {
+                Console.WriteLine("loodan et sa saad varsti tööle C:");
+            }
 
             //küsi kasutajalt tema parooli 
+            string parool = "";
+            string parool2 = "";
+            Console.WriteLine("Mis on sinu parool?"); 
+            parool = Console.ReadLine();
             //seejärel küsi kasutajalt tema 2FA koodi,
+            Console.WriteLine("Mis on sinu 2FA parool?");
+            parool2 = Console.ReadLine();
             //kui parool on vale, ütle sissepääs keelatud
+            if (parool != "1234")
+            {
+                Console.WriteLine("sissepääs on keelatud");
+            }
             //kui parool on õige, kontrolli 2FA koodi:
-            //  kui 2FA kood on lühem kui 6 tähte ütle sissepääs on keelatud, kood on liiga lühike
-            //  kui 2FA kood on pikem kui 6 tähte ütle sissepääs on keelatud, kood on liiga pikk
-            //  kui 2FA kood on 6 tähte lase sisse, ütle "oled sissepääsenud"
+            if (parool == "1234")
+            {
+                //  kui 2FA kood on lühem kui 6 tähte ütle sissepääs on keelatud, kood on liiga lühike
+                if (parool2.Length < 6)
+                {
+                    Console.WriteLine("sissepääs on keelatud, kood on liiga lühike");
+                }
+                //  kui 2FA kood on pikem kui 6 tähte ütle sissepääs on keelatud, kood on liiga pikk
+                if (parool2.Length > 6)
+                {
+                    Console.WriteLine("sissepääs on keelatud, kood on liiga pikk");
+                }
+                //  kui 2FA kood on 6 tähte lase sisse, ütle "oled sissepääsenud"
+                if (parool2.Length == 6)
+                {
+                    Console.WriteLine("oled sissepääsenud");
+                }
+            }
             //NB: 2FA kood ei matchima eksisteeriva näitega nagu parool.
         }
     }
