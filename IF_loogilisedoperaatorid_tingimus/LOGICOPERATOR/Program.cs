@@ -19,79 +19,94 @@
 
             //"kas sul on paber?" on vastus = "jah" siis paber = true jne
             string sisestus = "";
-            while (sisestus != "jah" && sisestus != "ei")
+            int i = 0;
+            while (i<4)
             {
-                Console.WriteLine("kas sul on pliiatsid");
-                sisestus = Console.ReadLine();
+                switch (i)
+                {
+                    case 0:
+                        Console.WriteLine("kas sul on pliiatsid");
+                        break;
+                    case 1:
+                        Console.WriteLine("kas sul on paber");
+                        break;
+                    case 2:
+                        Console.WriteLine("kas sul on saag");
+                        break;
+                    case 3:
+                        Console.WriteLine("kas sul on lauad");
+                        break;
+                }
+                while (sisestus == "")
+                {
+                    sisestus = Console.ReadLine();
+                }
                 if (sisestus == "jah")
                 {
-                    pliiatsid = true;
+                    switch (i)
+                    {
+                        case 0:
+                            pliiatsid = true;
+                            break;
+                        case 1:
+                            paber = true;
+                            break;
+                        case 2:
+                            saag = true;
+                            break;
+                        case 3:
+                            lauad = true;
+                            break;
+
+                    }
                 }
                 else if (sisestus == "ei")
                 {
-                    pliiatsid= false;
+                    switch (i)
+                    {
+                        case 0:
+                            pliiatsid = false;
+                            break;
+                        case 1:
+                            paber = false;
+                            break;
+                        case 2:
+                            saag = false;
+                            break;
+                        case 3:
+                            lauad = false;
+                            break;
+                    }
                 }
-                Console.WriteLine("kas sul on paber");
-                sisestus = Console.ReadLine();
-                if (sisestus == "jah")
-                {
-                    paber = true;
-                }
-                else if (sisestus == "ei")
-                {
-                    paber = false;
-                }
-                Console.WriteLine("kas sul on saag");
-                sisestus = Console.ReadLine();
-                if (sisestus == "jah")
-                {
-                    saag = true;
-                }
-                else if (sisestus == "ei")
-                {
-                    saag = false;
-                }
-                Console.WriteLine("kas sul on lauad");
-                sisestus = Console.ReadLine();
-                if (sisestus == "jah")
-                {
-                    lauad = true;
-                }
-                else if (sisestus == "ei")
-                {
-                    lauad = false;
-                }
-                if (sisestus != "jah" &&  sisestus != "ei")
-                {
-                    Console.WriteLine("palun vasta jah või ei");
-                }
+                i++;
+                sisestus = "";
             }
 
             //kui kõikides muutujates on vastus olemas, tee järgnevad tingimuslaused kombineerides mitu tingimust korraga
             //ja kasutades and, or ja not operaatoreid && || !
 
             //kui tal on saag ja lauad aga paberit ja pliiatsit ei ole, siis ütle "võiksid õppida tisleriks"
-            if (pliiatsid == false && paber == false && saag == true && lauad == true)
+            if (!pliiatsid && !paber && saag && lauad)
             {
                 Console.WriteLine("võiksid õppida tisleriks");
             }
             //kui tal on pliiatsid ja paber aga saagi ja laudu ei ole, siis ütle "võiksid õppida arhitektiks"
-            else if (pliiatsid == true && paber == true && saag == false && lauad == false)
+            else if (pliiatsid && paber&& !saag&& !lauad)
             {
                 Console.WriteLine("võiksid õppida arhitektiks");
             }
             //kui tal on pliiatsid ja paber ning ka saag ja lauad, siis ütle "võiksid õppida arhitektiks ja tisleriks, sul on kõik uksed avatud"
-            else if (pliiatsid == true && paber == true && saag == true && lauad == true)
+            else if (pliiatsid && paber && saag && lauad)
             {
                 Console.WriteLine("võiksid õppida arhitektiks ja tisleriks, sul on kõik uksed avatud");
             }
             //kui tal on pliiatsid ja saag aga paberit ja laudu ei ole, siis ütle "sul on tööriistad, aga materjali mitte, ma ei oska öelda"
-            else if (pliiatsid == true && paber == false && saag == true && lauad == false)
+            else if (pliiatsid && !paber && saag && !lauad)
             {
                 Console.WriteLine("sul on tööriistad, aga materjali mitte, ma ei oska öelda");
             }
             //kui tal on paber ja lauad, aga pliiatsit ja saagi ei ole, siis ütle "sul on materjal, aga tööriistu mitte, mine k-rautasse"
-            else if (pliiatsid == false && paber == true && saag == false && lauad == true)
+            else if (!pliiatsid && paber && !saag && lauad)
             {
                 Console.WriteLine("sul on materjal, aga tööriistu mitte, mine k-rautasse");
             }
