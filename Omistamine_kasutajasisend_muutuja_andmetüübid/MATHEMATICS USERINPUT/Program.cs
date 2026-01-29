@@ -10,11 +10,19 @@
             //omab täisarvu muutujat aastaarvu jaoks
             //küsib kasutajalt praegust kalendriaastat. int.Parse() üritab muuta andmeid tekstist arvuks
             //omab muutujat sünniaasta jaoks, siia sisse omimstatakse tehte tulemus, kus aastaarvust lahutatakse vanus
-
+            int vanus = 0;
+            int aasta = 0;
+            Console.WriteLine("Kui vana sa oled?");
+            vanus = int.Parse(Console.ReadLine());
+            Console.WriteLine("Mis on praegune aasta?");
+            aasta = int.Parse(Console.ReadLine());
+            int sünniaasta = aasta - vanus;
             //2. kirjuta programm, mis
             //küsib kasutajalt tema nime
             //hoiab seda nime sõne-tüüpi muutujas
             //kuvab välja tervituse, liites juurde inimese nime
+            Console.WriteLine("Mis on sinu nimi?");
+            string nimi = Console.ReadLine();
 
             //3. kirjuta programm, mis
             //omab muutujat kommikaal

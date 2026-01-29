@@ -207,7 +207,7 @@
                     }
                 }
                 Console.WriteLine($"Küsitlusprogramm sulgub, viimane sisestatud vastus {vastus}");
-            }
+            }   
 
             //kui klass, kus õpilane parasjagu on, asub vahemikus 1-4, siis
             //      erista switch case abil:
