@@ -13,7 +13,13 @@
             // ja kuva muutuja "täisarv" välja
             // -> do while tsükli tingimuseks kirjuta kontroll, mis kontrollib kas muutujas "täisarv" on arv miinuses rohkem kui -31
             // peale tsüklit kuva sõnum "tsükkel lõppes"
-
+            int täisarv = 0;
+            do
+            {
+                täisarv -= 2;
+                Console.WriteLine(täisarv);
+            } while (täisarv > -31);
+            Console.WriteLine("tsükkel lõppes");
             // 2. "pikenda sõnumit"
             // tee muutuja "sõnum" mille sees on tühi string, nt ""
             // kirjuta do while tsükkel
@@ -22,7 +28,14 @@
             // kuva muutuja "sõnum" välja
             // -> do while tsükli tingimuseks kirjuta kontroll, mis kontrollib muutuja "sõnum" pikkust .Length abil, kui sõnum on pikem kui 140 tähte, siis tsükkel lõppeb
             // peale tsüklit kuva sõnum "see sõnum enam twitterisse ei mahuks, kirjuta vähem fam"
-
+            string sõnum = "";
+            do
+            {
+                Console.WriteLine("palun lisa järgmine sõnumi osa");
+                sõnum += Console.ReadLine();
+                Console.WriteLine(sõnum);
+            } while (sõnum.Length < 140);
+            Console.WriteLine("see sõnum enam twitterisse ei mahuks, kirjuta vähem fam");
             /* While ülesanded*/
 
             // 1. "niikaua kuni ohtu pole"
@@ -37,7 +50,17 @@
             /* 
              * NB programm peab niikaua käima kuni kasutaja sisestus on suurem või võrdne kui 40.000
              */
-
+            float CO2tase = 0.0f;
+            while (CO2tase < 40.000)
+            {
+                Console.WriteLine("mis on co2 tase?");
+                CO2tase += float.Parse(Console.ReadLine());
+                if (CO2tase < 40.000)
+                {
+                    Console.WriteLine("otsest ohtu ei ole");
+                }
+            }
+            Console.WriteLine("evakueeri hoonest, süsihappegaasi tase on liiga kõrgel");
             // 2. "vibumees"
             // tee muutuja "mehike" mille sees on täisarv 0
             // tee muutuja "vastus" mille sees on tühi tekst
@@ -55,7 +78,30 @@
             // peale tsüklit kontrolli kas muutujas "mehike" olev arv on väiksem kui 5
             // kui on väiksem kui 5 siis kuva sõnum "mehike elab :D"
             // kõikidel muudel juhtudel kuva sõnum "tapsid mehikese ära :c"
-
+            int mehike = 0;
+            string vastus = "";
+            while (mehike < 5 || vastus == "jah")
+            {
+                Console.WriteLine("Kas tahad mehikesse noole lasta?");
+                vastus += Console.ReadLine();
+                if (vastus == "jah")
+                {
+                    Console.WriteLine("Mitu noolt lased?");
+                    mehike += int.Parse(Console.ReadLine());
+                }
+                else if (vastus == "ei")
+                {
+                    break;
+                }
+            }
+            if (mehike < 5)
+            {
+                Console.WriteLine("mehike elab :D");
+            }
+            else
+            {
+                Console.WriteLine("tapsid mehikese ära :C");
+            }
             /* For ülesanded*/
 
             // 1. "prindi numbrid"
@@ -65,7 +111,15 @@
             // kirjuta for tsükkel, tsükli teise parameetrisse - kontrolli aseta i vastu muutuja "kuipalju"
             // tsükli tegevusena kuva kasutajale välja i, aga liida sellele üks juurde et lugemine algaks arvust 1
             // peale tsüklit kuva kasutajale sõnum "tsükkel lõppes"
-
+            int kuidpalju = 0;
+            Console.WriteLine("mitu numbrit sa tahad?");
+            int kuidpalu = int.Parse(Console.ReadLine());
+            for (int i = 0; i < kuidpalju;)
+            {
+                Console.WriteLine(i);
+                i++;
+            }
+            Console.WriteLine("tükkel lõppes");
             // 2. "Ruut"
             // tee muutuja "ruudukülg" milles on täisarv 0
             // kuva kasutajale tekst millega küsid kasutajalt kui suurt ruutu ta tahab

@@ -8,11 +8,18 @@
 
             //1. - "artifitsiaalne ebaintelligents"
             //Kirjuta massiiv (Array), milles on sõned. Tekita loend tühjalt, aga tee loendi pikkuseks 5 elementi.
+            string[] sõned = ["ja", "ei", "suu", "koer", "tore"];
             //Kirjuta for tsükkel, tsükkel peaks käima niikaua kuni massiivis elemente jätkub
+            for (int i = 0; i < sõned.Length; i++)
+            {
+                Console.WriteLine("sisesta nimisõna");
+                sõned.Append(Console.ReadLine());
+            }
             //tsükkel teeb iga elemendi juures järgnevad tegevused
             //- küsib kasutajalt nimisõna
             //- asetab vastavasse järjendi elementi kasutaja sisestuse
             //Kui tsükkel on läbi, kuvatakse kasutajale lause, iga elemendiga:
+            Console.WriteLine($"Tere päringule {sõned[1]} kohta oskan ainult vastata nii:\nMinu {sõned[2]}-süsteem ei taju kuidas {sõned[3]} on {sõned[0]}iga seotud, \nja arvan et {sõned[0]} probleemi lahendaks ära hoopis {sõned[4]} rakendamine");
             // NB [0], [1] jne tekstis väljendab mitmendat elementi massiivist kasutatakse, seal pead ise kirjutama elementide kasutuse õigesti:
             //"Teie päringule [0] kohta oskan ainult vastata nii:\nMinu [2]-süsteem ei taju kuidas [3] on [0]iga seotud, \nja arvan et [0] probleemi lahendaks ära hoopis [4] rakendamine"
 
